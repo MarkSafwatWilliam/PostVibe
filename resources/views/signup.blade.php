@@ -13,7 +13,7 @@
             </p>
         </div>
         <div class="w-full md:w-auto md:flex-grow">
-            <form action="/signup" method="post" class="">
+            <form action="/signup" method="post">
                 @csrf
                 <div class="flex flex-col gap-y-[1.75rem]">
                     <div>

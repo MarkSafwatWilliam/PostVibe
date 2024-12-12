@@ -17,7 +17,7 @@ class LoginController extends Controller
     $fields = $req->validate(['email' => ["required", "email"], 'password' => ["required"]]);
 
     if (!Auth::attempt($fields)) {
-      return back()->with('message', 'Invalid credentials');
+      return back()->with('ErrMessage', 'Invalid credentials');
     }
     $req->session()->regenerate();
     

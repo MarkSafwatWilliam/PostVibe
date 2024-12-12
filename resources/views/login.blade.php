@@ -13,7 +13,7 @@
             </p>
         </div>
         <div class="w-full max-w-2xl">
-            <form action="/login" method="post" class="">
+            <form action="/login" method="post">
                 @csrf
                 <div class="flex flex-col gap-y-[1.75rem]">
                     <div>
@@ -38,10 +38,17 @@
                         <p class="err-message">{{ $message }}</p>
                         @enderror
                     </div>
-                                        <div class="text-center">
+                    @if (session()->has("ErrMessage"))
+                    <div class="err-message">
+                        {{ session("ErrMessage") }}
+                    </div>
+                    @endif
+                    <div class="text-center">
                         <p class="text-sm">
                             Don't have an account ?
-                            <a href="/signup" class="text-primary">Sign up now</a>
+                            <a href="/signup" class="text-primary"
+                                >Sign up now</a
+                            >
                         </p>
                     </div>
                     <div>
