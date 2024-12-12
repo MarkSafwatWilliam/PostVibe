@@ -36,7 +36,7 @@
         >
             <x-logo size="2xl">
                 <p class="text-[#3B3C4A] mt-4 text-sm [lineHeight:0px]">
-                    &copy; 2024 PostVibe. All rights reserved.
+                    &copy; 2024 ArabHorizons. All rights reserved.
                 </p>
             </x-logo>
             <div class="py-4 flex-grow">

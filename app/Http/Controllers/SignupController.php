@@ -19,8 +19,7 @@ class SignupController extends Controller
 
     $fields["password"] = bcrypt($fields["password"]);
 
-    $user = User::create($fields);
-    echo $user;
-    return '<div> You are registerd successfully </div>';
+    User::create($fields);
+    return redirect()->route('login');
   }
 }
