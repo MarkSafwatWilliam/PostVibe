@@ -23,8 +23,12 @@
                 <ul class="flex justify-between gap-4 md:gap-8">
                     <li><a href="/">Home</a></li>
                     <li><a href="/contact">Contact</a></li>
+                    @auth
+                    <li><a href="/signout">Sign out</a></li>
+                    @else
                     <li><a href="/signup">Sign up</a></li>
                     <li><a href="/login">Log in</a></li>
+                    @endauth
                 </ul>
             </nav>
         </header>
