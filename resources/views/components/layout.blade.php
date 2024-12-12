@@ -24,7 +24,12 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/contact">Contact</a></li>
                     @auth
-                    <li><a href="/signout">Sign out</a></li>
+                    <li>
+                        <form action="/signout" method="post">
+                            @csrf
+                            <button type="submit">Sign out</button>
+                        </form>
+                    </li>
                     @else
                     <li><a href="/signup">Sign up</a></li>
                     <li><a href="/login">Log in</a></li>

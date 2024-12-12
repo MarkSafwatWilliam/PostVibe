@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\LoginController;
-
-
+use App\Http\Controllers\LogoutController;
 
 Route::get('/', function () {
   return View('welcome');
@@ -17,3 +16,6 @@ Route::post('/signup', [SignUpController::class, 'register']);
 // Login routes
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
+
+// signout route
+Route::post('/signout', [LogoutController::class, 'logout']);
