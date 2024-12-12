@@ -10,3 +10,4 @@ Route::get('/', function () {
 });
 
 Route::get('/signup', [SignUpController::class, 'index']);
+Route::post('/signup', [SignUpController::class, 'register']);

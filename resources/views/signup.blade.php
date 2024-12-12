@@ -3,7 +3,11 @@
         class="min-h-dvh px-10 sm:px-sm md:px-md lg:px-lg xl:px-xl flex flex-col md:flex-row justify-center md:justify-between items-center gap-10 md:gap-16 lg:gap-20 xl:gap-x-28"
     >
         <div class="md:max-w-sm lg:max-w-md">
-            <h1 class="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">Sign up Today</h1>
+            <h1
+                class="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4"
+            >
+                Sign up Today
+            </h1>
             <p class="text-xl">
                 Create an account so that you’d be able to create Awesome blogs!
             </p>
@@ -13,13 +17,16 @@
                 @csrf
                 <div class="flex flex-col gap-y-[1.75rem]">
                     <div>
-                        <label for="name" class="text-primary">Name</label>
+                        <label for="username" class="text-primary">Name</label>
                         <input
                             type="text"
-                            name="name"
-                            id="name"
+                            name="username"
+                            id="username"
                             class="form-input"
                         />
+                        @error('username')
+                          <p>{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="email" class="text-primary">Email</label>
@@ -29,6 +36,9 @@
                             id="email"
                             class="form-input"
                         />
+                        @error('email')
+                          <p>{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="password" class="text-primary"
@@ -40,6 +50,9 @@
                             id="password"
                             class="form-input"
                         />
+                        @error('password')
+                          <p>{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="confirmedpassword" class="text-primary"
@@ -47,7 +60,7 @@
                         >
                         <input
                             type="password"
-                            name="confirmedpassword"
+                            name="password_confirmation"
                             id="confirmedpassword"
                             class="form-input"
                         />
