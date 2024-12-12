@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class SignupController extends Controller
 {
   public function index()
   {
+    if (Auth::check()) {
+      return redirect('/');
+    }
     return view('signup');
   }
 
