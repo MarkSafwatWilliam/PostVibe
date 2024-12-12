@@ -16,7 +16,7 @@
     </head>
     <body class="font-sans antialiased bg-white">
         <header
-            class="flex items-center justify-between py-8 px-sm md:px-md lg:px-lg xl:px-xl"
+            class="flex items-center justify-between py-8 px-sm md:px-md lg:px-lg xl:px-xl h-[80px]"
         >
             <x-logo size="3xl" />
             <nav class="text-nav text-[1rem]">

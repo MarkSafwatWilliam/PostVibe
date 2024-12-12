@@ -1,6 +1,6 @@
 <x-layout>
     <main
-        class="min-h-dvh px-10 sm:px-sm md:px-md lg:px-lg xl:px-xl flex flex-col md:flex-row justify-center md:justify-between items-center gap-10 md:gap-16 lg:gap-20 xl:gap-x-28"
+        class="min-h-[calc(100dvh-80px)] px-10 sm:px-sm md:px-md lg:px-lg xl:px-xl flex flex-col md:flex-row justify-center md:justify-between items-center gap-10 md:gap-16 lg:gap-20 xl:gap-x-28"
     >
         <div class="md:max-w-sm lg:max-w-md">
             <h1
@@ -18,26 +18,18 @@
                 <div class="flex flex-col gap-y-[1.75rem]">
                     <div>
                         <label for="username" class="text-primary">Name</label>
-                        <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            class="form-input"
-                        />
+                        <input type="text" name="username" id="username"
+                        value="{{ old("username") }}" class="form-input" />
                         @error('username')
-                          <p>{{ $message }}</p>
+                        <p class="form-err">{{ $message }}</p>
                         @enderror
                     </div>
                     <div>
                         <label for="email" class="text-primary">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            class="form-input"
-                        />
-                        @error('email')
-                          <p>{{ $message }}</p>
+                        <input type="email" name="email" id="email" value="{{
+                            old("email")
+                        }}" class="form-input" /> @error('email')
+                        <p class="form-err">{{ $message }}</p>
                         @enderror
                     </div>
                     <div>
@@ -51,7 +43,7 @@
                             class="form-input"
                         />
                         @error('password')
-                          <p>{{ $message }}</p>
+                        <p class="form-err">{{ $message }}</p>
                         @enderror
                     </div>
                     <div>
