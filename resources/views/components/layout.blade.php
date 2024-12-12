@@ -41,15 +41,17 @@
         {{ $slot }}
 
         <footer
-            class="text-center bg-[#F6F6F7] py-8 px-sm md:px-md lg:px-lg xl:px-xl flex items-center justify-between"
+            class="text-center bg-[#F6F6F7] py-8 px-sm md:px-md lg:px-lg xl:px-xl flex flex-col gap-y-10 md:flex-row items-center justify-between"
         >
             <x-logo size="2xl">
-                <p class="text-[#3B3C4A] mt-4 text-sm [lineHeight:0px]">
+                <p class="text-[#3B3C4A] mt-4 text-sm md:[lineHeight:0px]">
                     &copy; 2024 ArabHorizons. All rights reserved.
                 </p>
             </x-logo>
             <div class="py-4 flex-grow">
-                <ul class="flex justify-end gap-4 md:gap-8 text-nav">
+                <ul
+                    class="flex justify-end gap-y-2 md:gap-x-8 text-nav flex-wrap [&>li]:m-auto md:[&>li]:m-0"
+                >
                     <li>Terms of Use</li>
                     <li>Privacy Policy</li>
                     <li>Cookie Policy</li>
