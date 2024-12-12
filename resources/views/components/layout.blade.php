@@ -50,7 +50,7 @@
             </x-logo>
             <div class="py-4 flex-grow">
                 <ul
-                    class="flex justify-end gap-y-2 md:gap-x-8 text-nav flex-wrap [&>li]:m-auto md:[&>li]:m-0"
+                    class="flex justify-end gap-y-4 gap-x-4 md:gap-x-8 text-nav flex-wrap [&>li]:m-auto md:[&>li]:m-0"
                 >
                     <li>Terms of Use</li>
                     <li>Privacy Policy</li>
