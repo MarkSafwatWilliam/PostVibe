@@ -81,12 +81,14 @@
                         <label for="message" class="text-primary"
                             >Message</label
                         >
-                        <input
+                        <textarea
                             type="text"
                             name="message"
                             id="message"
                             class="form-input h-[165px]"
-                        />
+                            required
+                        >
+                        </textarea>
                     </div>
 
                     <div>
