@@ -15,4 +15,13 @@
   .err-message {
     @apply mt-1 py-2 px-4 bg-red-700 text-white rounded-md bg-opacity-85
   }
+
+   .custom-select {
+        @apply pr-10;
+    }
+
+    .select-wrapper::after {
+        content: '▼'; 
+        @apply absolute top-1/2 right-3 transform pointer-events-none text-gray-500;
+    }
  }

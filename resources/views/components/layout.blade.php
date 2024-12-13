@@ -16,7 +16,7 @@
     </head>
     <body class="font-sans antialiased bg-white">
         <header
-            class="flex items-center justify-between py-8 px-sm md:px-md lg:px-lg xl:px-xl h-[80px]"
+            class="flex items-center justify-between py-8 px-10 sm:px-sm md:px-md lg:px-lg xl:px-xl h-[80px]"
         >
             <x-logo size="3xl" />
             <nav class="text-nav text-[1rem]">
@@ -41,7 +41,7 @@
         {{ $slot }}
 
         <footer
-            class="text-center bg-[#F6F6F7] py-8 px-sm md:px-md lg:px-lg xl:px-xl flex flex-col gap-y-10 md:flex-row items-center justify-between"
+            class="text-center bg-[#F6F6F7] py-8 px-10 sm:px-sm md:px-md lg:px-lg xl:px-xl flex flex-col gap-y-10 md:flex-row items-center justify-between"
         >
             <x-logo size="2xl">
                 <p class="text-[#3B3C4A] mt-4 text-sm md:[lineHeight:0px]">

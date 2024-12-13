@@ -19,3 +19,9 @@ Route::post('/login', [LoginController::class, 'login']);
 
 // signout route
 Route::post('/signout', [LogoutController::class, 'logout']);
+
+// Contact us 
+
+Route::get('/contact' , function(){
+  return view('contact');
+});
