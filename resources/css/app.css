@@ -24,4 +24,9 @@
         content: '▼'; 
         @apply absolute top-1/2 right-3 transform pointer-events-none text-gray-500;
     }
+
+    select.form-input option:disabled {
+    @apply text-gray-400;
+}
+
  }
