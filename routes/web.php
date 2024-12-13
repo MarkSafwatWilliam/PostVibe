@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SignUpController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-  return View('welcome');
+    return View('welcome');
 });
 
 // Signup routes
