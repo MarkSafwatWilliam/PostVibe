@@ -43,7 +43,6 @@
             }
 
             .post-card {
-                background-color: #FFFFF0;
                 /* Ivory */
                 color: #36454F;
                 /* Charcoal Gray */
@@ -176,7 +175,7 @@
                 </div>
             </div>
             <div class="text-center mt-8">
-                <a href="#" class="font-semibold bg-primary text-white px-4 py-2 rounded">View All Posts</a>
+                <a href="/posts" class="font-semibold bg-primary text-white px-4 py-2 rounded">View All Posts</a>
             </div>
         </section>
 
