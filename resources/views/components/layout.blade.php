@@ -20,7 +20,7 @@
                 <x-logo size="xl" />
             </a>
             @auth
-                <a href="/posts" class="text-primary border-2 p-2 rounded-md border-primary">Create new</a>
+                <a href="/create-new" class="text-primary border-2 p-2 rounded-md border-primary">Create new</a>
             @endauth
 
         </div>

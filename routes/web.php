@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SignUpController;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,6 +11,9 @@ Route::get('/', function () {
 });
 Route::get('/posts', function () {
     return View('posts');
+});
+Route::get("/create-new", function () {
+    return View('create-new');
 });
 
 // Signup routes
