@@ -1,5 +1,30 @@
 <x-layout>
     <section class="container mx-auto py-8 px-4">
+
+        {{-- Create an new post --}}
+        <div class="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-4">
+                <h2 class="text-2xl font-semibold text-center mb-4">Create a New Post</h2>
+        
+                <form action="/create-post" method="POST" class="space-y-4">
+                    @csrf
+                    <div>
+                        <input class="w-full p-2 border border-gray-300 rounded-md" name="title" type="text" placeholder="Title:" />
+                    </div>
+        
+                    <div>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-md" name="content" placeholder="What's on your mind?" rows="4"></textarea>
+                    </div>
+        
+                    <div class="text-right">
+                        <button style="background-color:blue" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Blog Card -->
             <div class="post-card shadow-md rounded-lg overflow-hidden">

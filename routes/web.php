@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SignUpController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return View('welcome');
@@ -28,3 +29,7 @@ Route::post('/signout', [LogoutController::class, 'logout']);
 Route::get('/contact', function () {
     return view('contact');
 });
+
+// Create a new post
+Route::post('/create-post', [PostController::class, 'createPost']);
+
