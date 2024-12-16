@@ -10,16 +10,16 @@
             </p>
         </div>
         <div class="w-full md:w-auto md:flex-grow">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/create-post" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-col gap-y-[1.75rem]">
                     <div>
-                        <label for="username" class="text-primary">Title</label>
-                        <input type="text" name="username" id="username" class="form-input" />
+                        <label for="title" class="text-primary">Title</label>
+                        <input type="text" name="title" id="title" class="form-input" />
                     </div>
                     <div>
-                        <label for="email" class="text-primary">Body</label>
-                        <textarea class="form-input min-h-24" rows="5"></textarea>
+                        <label for="content" class="text-primary">Body</label>
+                        <textarea name="content" id="content" class="form-input min-h-24" rows="5"></textarea>
                     </div>
 
                     <!-- Image Input -->

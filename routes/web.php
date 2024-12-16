@@ -6,13 +6,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return View('welcome');
 });
 Route::get('/posts', function () {
-    return View('posts');
+    $posts=auth()->user()->usersCoolPosts()->latest()->get();
+    return View('posts',['posts'=>$posts]);
 });
 Route::get("/create-new", function () {
     return View('create-new');
