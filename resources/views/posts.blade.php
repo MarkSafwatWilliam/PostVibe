@@ -1,32 +1,30 @@
 <x-layout>
     <section class="container mx-auto py-8 px-4">
-
-        {{-- Create an new post --}}
-        <div class="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-            <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-4">
-                <h2 class="text-2xl font-semibold text-center mb-4">Create a New Post</h2>
         
-                <form action="/create-post" method="POST" class="space-y-4">
-                    @csrf
-                    <div>
-                        <input class="w-full p-2 border border-gray-300 rounded-md" name="title" type="text" placeholder="Title:" />
-                    </div>
-        
-                    <div>
-                        <textarea class="w-full p-2 border border-gray-300 rounded-md" name="content" placeholder="What's on your mind?" rows="4"></textarea>
-                    </div>
-        
-                    <div class="text-right">
-                        <button style="background-color:blue" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Post</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-        
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {{-- Display published posts --}}
+            {{-- Symbolic Link: Laravel stores the public files in the storage directory but this is not directly accessible by the browser.
+            You need to create a symbolic link so that files in storage can be accessed publicly.
+            Run this command " php artisan storage:link " --}}
+
+            @foreach ($posts as $post)
+            <div class="post-card shadow-md rounded-lg overflow-hidden">
+                <!-- Display the uploaded image -->
+                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-full h-40 object-cover">
+
+                <div class="p-4">
+                    <h4 class="text-xl font-semibold mb-2">{{ $post->title }}</h4>
+                    <p class="text-sm text-gray-600">
+                        {{ $post->user->username }} | {{ $post->created_at->format('F d, Y') }}
+                    </p>
+                </div>
+            </div>
+            @endforeach
+            
             <!-- Blog Card -->
+
+
             <div class="post-card shadow-md rounded-lg overflow-hidden">
                 <img src="https://via.placeholder.com/400x200" alt="Post Image" class="w-full h-40 object-cover">
                 <div class="p-4">

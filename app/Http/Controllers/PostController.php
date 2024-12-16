@@ -7,24 +7,24 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function createPost(Request $request){
+    public function createPost(Request $request)
+    {
         $incomingFields = $request->validate([
             'title' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
         ]);
-
-        // Sanitize the 'title' and 'body' fields to remove any HTML tags
-        // This helps protect against potential cross-site scripting (XSS) attacks
+    
+        // Sanitize 'title' and 'content'
         $incomingFields['title'] = strip_tags($incomingFields['title']);
         $incomingFields['content'] = strip_tags($incomingFields['content']);
-
-
-        // Laravel provides the auth() helper to access the currently logged-in user's information.
-        // Retrieves the id of the currently authenticated user.
         $incomingFields['user_id'] = auth()->id();
-        
-        // Use the Post model to create a new record in the 'posts' table
-        // The 'create' method inserts the sanitized and validated data
+    
+        // Save the uploaded image
+        $incomingFields['image'] = $request->file('image')->store('post-images', 'public');
+    
+        // Save to the database
         Post::create($incomingFields);
+    
         return redirect('/posts');
     }}

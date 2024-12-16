@@ -11,7 +11,8 @@ Route::get('/', function () {
     return View('welcome');
 });
 Route::get('/posts', function () {
-    return View('posts');
+    $posts=auth()->user()->usersCoolPosts()->latest()->get();
+    return View('posts',['posts'=>$posts]);
 });
 Route::get("/create-new", function () {
     return View('create-new');
