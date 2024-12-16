@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Laravel</title>
+    <title>Arab Horizon</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net" />
@@ -15,22 +15,33 @@
 
 <body class="font-sans antialiased bg-white">
     <header class="flex items-center justify-between py-8 px-10 sm:px-sm md:px-md lg:px-lg xl:px-xl h-[80px]">
-        <x-logo size="3xl" />
+        <div class="flex gap-5 items-center">
+            <a href="/">
+                <x-logo size="xl" />
+            </a>
+            @auth
+                <a href="/create-new" class="text-primary border-2 p-2 rounded-md border-primary">Create new</a>
+            @endauth
+
+        </div>
         <nav class="text-nav text-[1rem]">
-            <ul class="flex justify-between gap-4 md:gap-8">
-                <li><a href="/">Home</a></li>
+            <ul class="flex items-center gap-5">
                 <li><a href="/posts">Posts</a></li>
+                <li><a href="/posts">My Posts</a></li>
+                <li><a href="/posts">Create new</a></li>
+
                 <li><a href="/contact">Contact</a></li>
                 @auth
                     <li>
                         <form action="/signout" method="post">
                             @csrf
-                            <button type="submit">Sign out</button>
+                            <button class="text-primary border-2 p-2 rounded-md border-primary" type="submit">Sign
+                                out</button>
                         </form>
                     </li>
                 @else
-                    <li><a href="/signup">Sign up</a></li>
-                    <li><a href="/login">Log in</a></li>
+                    <li><a class="p-2  bg-primary rounded-md text-white" href="/signup">Sign up</a></li>
+                    <li><a class="text-primary border-2 p-2 rounded-md border-primary" href="/login">Log in</a></li>
                 @endauth
             </ul>
         </nav>
