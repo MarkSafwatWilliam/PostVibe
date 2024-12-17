@@ -18,10 +18,16 @@
             </div>
         </div>
     </section>
+<div class="text-center">
+<a href="/create-new" class="px-6 py-3 bg-green-700 text-white text-lg font-semibold rounded-md hover:bg-green-800 transition duration-300">
+            Share your opinion NOW!
+        </a>
+</div>
+   
 
     <!-- Latest Posts Section -->
     <section class="container mx-auto py-8 px-4">
-        <h3 class="text-2xl font-bold mb-6">Latest Posts</h3>
+        <h3 class="text-2xl font-bold mb-6 text-center">Latest Posts</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Blog Card -->
             <div class="post-card shadow-md rounded-lg overflow-hidden">
