@@ -19,16 +19,14 @@
             <a href="/">
                 <x-logo size="xl" />
             </a>
-            @auth
-                <a href="/create-new" class="text-primary border-2 p-2 rounded-md border-primary">Create new</a>
-            @endauth
+            
 
         </div>
         <nav class="text-nav text-[1rem]">
             <ul class="flex items-center gap-5">
-                <li><a href="/posts">Posts</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/posts">My Posts</a></li>
-                <li><a href="/posts">Create new</a></li>
+                <li><a href="/create-new">New Blog</a></li>
 
                 <li><a href="/contact">Contact</a></li>
                 @auth
