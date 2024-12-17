@@ -1,40 +1,46 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SignUpController;
-use Illuminate\Contracts\View\View;
 
-Route::get('/', function () {
-    return View('welcome');
-});
-Route::get('/posts', function () {
-    $posts=auth()->user()->usersCoolPosts()->latest()->get();
-    return View('posts',['posts'=>$posts]);
-});
-Route::get("/create-new", function () {
-    return View('create-new');
-});
+// Login routes
+Route::get('/login', [LoginController::class, 'index'])->name('login'); // Name it for redirects
+Route::post('/login', [LoginController::class, 'login']);
 
 // Signup routes
 Route::get('/signup', [SignUpController::class, 'index']);
 Route::post('/signup', [SignUpController::class, 'register']);
 
-// Login routes
-Route::get('/login', [LoginController::class, 'index']);
-Route::post('/login', [LoginController::class, 'login']);
+// Middleware to protect authenticated routes
+Route::middleware(['auth'])->group(function () {
+    // Home page (welcome)
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-// signout route
-Route::post('/signout', [LogoutController::class, 'logout']);
+    // Posts page
+    Route::get('/posts', function () {
+        $posts = auth()->user()->usersCoolPosts()->latest()->get();
+        return view('posts', ['posts' => $posts]);
+    });
 
-// Contact us
+    // Create a new post form
+    Route::get('/create-new', function () {
+        return view('create-new');
+    });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+    // Create a new post action
+    Route::post('/create-post', [PostController::class, 'createPost']);
 
-// Create a new post
-Route::post('/create-post', [PostController::class, 'createPost']);
+    // Contact us page
+    Route::get('/contact', function () {
+        return view('contact');
+    });
 
+    // Logout route
+    Route::post('/signout', [LogoutController::class, 'logout']);
+}); 
+
+?>
