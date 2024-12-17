@@ -19,9 +19,7 @@
             <a href="/">
                 <x-logo size="xl" />
             </a>
-            @auth
-                <a href="/create-new" class="text-primary border-2 p-2 rounded-md border-primary">Create new</a>
-            @endauth
+            
 
         </div>
         <nav class="text-nav text-[1rem]">
