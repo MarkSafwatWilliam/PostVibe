@@ -46,6 +46,13 @@
                             <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity">
                             </div>
                         </div>
+                        <!-- Preview Container -->
+                        <div id="preview-container" class="mt-4">
+                            <img
+                                id="image-preview"
+                                class="max-w-full max-h-40 object-cover rounded-md hidden"
+                            />
+                        </div>
                     </div>
 
                     <div>
@@ -57,4 +64,30 @@
             </form>
         </div>
     </main>
+
+    <script>
+        const imageInput = document.getElementById('image');
+        const imagePreview = document.getElementById('image-preview');
+        const defaultImage = imageInput.getAttribute('data-default-value');
+
+        imageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }else {
+                imagePreview.classList.add("hidden");
+                imagePreview.src = "";
+            }
+        });
+
+        if (defaultImage) {
+            imagePreview.src = defaultImage;
+            imagePreview.classList.remove('hidden');
+        }
+    </script>
 </x-layout>
