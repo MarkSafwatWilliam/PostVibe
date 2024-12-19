@@ -1,4 +1,5 @@
 <?php
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -16,9 +17,12 @@ Route::post('/signup', [SignUpController::class, 'register']);
 // Middleware to protect authenticated routes
 Route::middleware(['auth'])->group(function () {
     // Home page (welcome)
+    //with all the posts the static one and all the posts in the database
     Route::get('/', function () {
-        return view('welcome');
+        $posts = Post::latest()->get();
+        return view('welcome', ['posts' => $posts]);
     });
+    
 
     // Posts page
     Route::get('/posts', function () {
@@ -30,10 +34,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/create-new', function () {
         return view('create-new');
     });
-
-    // Create a new post action
-    Route::post('/create-post', [PostController::class, 'createPost']);
-
     // Contact us page
     Route::get('/contact', function () {
         return view('contact');
@@ -41,6 +41,16 @@ Route::middleware(['auth'])->group(function () {
 
     // Logout route
     Route::post('/signout', [LogoutController::class, 'logout']);
+
+
+
+    // post related routes
+    Route::post('/create-post', [PostController::class, 'createPost']);
+    Route::get('/edit-post/{post}', [PostController::class, 'ShowEditPost']);
+    Route::put('/edit-post/{post}', [PostController::class, 'updatePost']);
 }); 
+
+
+
 
 ?>

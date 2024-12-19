@@ -29,6 +29,22 @@
     <section class="container mx-auto py-8 px-4">
         <h3 class="text-2xl font-bold mb-6 text-center">Latest Posts</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            @foreach ($posts as $post)
+            <div class="post-card shadow-md rounded-lg overflow-hidden">
+                <!-- Display the uploaded image -->
+                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-full h-40 object-cover">
+
+                <div class="p-4">
+                    <h4 class="text-xl font-semibold mb-2">{{ $post->title }}</h4>
+                    <p class="text-sm text-gray-600">
+                        {{ $post->user->username }} | {{ $post->created_at->format('F d, Y') }}
+                    </p>
+                    
+                </div>
+            </div>
+            @endforeach
+
             <!-- Blog Card -->
             <div class="post-card shadow-md rounded-lg overflow-hidden">
                 <img
