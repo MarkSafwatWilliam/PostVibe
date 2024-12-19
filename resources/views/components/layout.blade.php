@@ -27,7 +27,7 @@
             <nav class="text-nav text-[1rem] relative">
                 <ul
                     id="menu"
-                    class="absolute w-[130px] top-8 right-2 text-center [&>:not(:last-child)]:border-b [&>:not(:last-child)]:border-white [&>li]:py-2 bg-primary text-white z-40 md:flex md:w-auto md:flex-row md:static md:dpy-0 md:bg-transparent md:text-black items-center gap-5"
+                    class="hidden absolute w-[130px] top-8 right-2 text-center [&>:not(:last-child)]:border-b [&>:not(:last-child)]:border-white [&>li]:py-2 bg-primary text-white z-40 md:flex md:w-auto md:flex-row md:static md:dpy-0 md:bg-transparent md:text-black items-center gap-5"
                 >
                     <li><a href="/">Home</a></li>
                     <li><a href="/posts">My Posts</a></li>
