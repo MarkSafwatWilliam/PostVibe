@@ -50,6 +50,7 @@
                                 name="image"
                                 id="image"
                                 class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                                accept="image/*"
                             />
                             <div
                                 class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-primary transition-colors"

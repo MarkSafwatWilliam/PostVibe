@@ -29,7 +29,7 @@
                         <div class="relative group w-full h-48 rounded-md border-dashed border-2 border-gray-300 hover:border-primary transition-colors flex items-center justify-center cursor-pointer overflow-hidden">
                             <!-- Add hidden input for current image -->
                             <input type="hidden" name="current_image" value="{{$post->image}}" />
-                            <input type="file" name="image" id="image" 
+                            <input type="file" name="image" id="image"  accept="image/*"
                                 data-default-value="{{$post->image ? asset('storage/' . $post->image) : ''}}"
                                 class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                             <div class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-primary transition-colors">
