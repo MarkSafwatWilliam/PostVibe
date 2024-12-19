@@ -26,7 +26,9 @@
             <ul class="flex items-center gap-5">
                 <li><a href="/">Home</a></li>
                 <li><a href="/posts">My Posts</a></li>
-                <li><a href="/create-new">New Blog</a></li>
+                @auth
+                  <li><a href="/create-new">New Blog</a></li>
+                @endauth
 
                 <li><a href="/contact">Contact</a></li>
                 @auth

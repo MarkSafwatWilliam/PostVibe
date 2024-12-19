@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="container mx-auto py-8 px-4">
+    <section class="container mx-auto py-8 px-4 min-h-[calc(100vh-80px)]">
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
