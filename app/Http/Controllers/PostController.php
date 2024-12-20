@@ -71,8 +71,11 @@ class PostController extends Controller
   public function deletePost(Request $request, $postId)
   {
     $post = Post::findOrFail($postId);
-    if (auth()->user()->id !== $post['user_id'] || !$post) {
-      return redirect('/posts');
+    if (!$post) {
+      return redirect('/posts')->with('error', 'Post not found');
+    }
+    if (auth()->user()->id !== $post['user_id']) {
+      return redirect('/posts')->with('error', 'Unauthorized action');
     }
     if ($post->image) {
       Storage::disk('public')->delete($post->image);
