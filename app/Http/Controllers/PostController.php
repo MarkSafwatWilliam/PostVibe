@@ -71,7 +71,7 @@ class PostController extends Controller
   public function deletePost(Request $request, $postId)
   {
     $post = Post::findOrFail($postId);
-    if (auth()->user()->id !== $post['user_id']) {
+    if (auth()->user()->id !== $post['user_id'] || !$post) {
       return redirect('/posts');
     }
     if ($post->image) {
