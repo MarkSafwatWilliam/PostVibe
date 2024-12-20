@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(function () {
         return view('posts', ['posts' => $posts]);
     });
 
+    Route::delete('/delete-post/{postId}', [PostController::class, 'deletePost'])->name('delete-post');
+
     // Create a new post form
     Route::get('/create-new', function () {
         return view('create-new');

@@ -29,7 +29,7 @@
                         <a style="font-weight: bold" href="/edit-post/{{$post->id}}">Edit</a>
                     </div>
                     <div>
-                        <form action="/delete-post/{{$post->id}}" method="POST">
+                        <form action="/delete-post/{{$post->id}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="bg-black text-white font-bold py-1 px-3 rounded-sm shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50"
