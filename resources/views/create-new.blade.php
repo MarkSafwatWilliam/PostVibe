@@ -26,6 +26,9 @@
                             id="title"
                             class="form-input"
                         />
+                        @error("title")
+                        <p class="err-message">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="content" class="text-primary">Body</label>
@@ -35,6 +38,10 @@
                             class="form-input min-h-24"
                             rows="5"
                         ></textarea>
+
+                        @error("content")
+                        <p class="err-message">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <!-- Image Input -->
@@ -77,6 +84,9 @@
                                 class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity"
                             ></div>
                         </div>
+                            @error("image")
+                            <p class="err-message">{{ $message }}</p>
+                            @enderror
                         <!-- Preview Container -->
                         <div id="preview-container" class="mt-4">
                             <img
