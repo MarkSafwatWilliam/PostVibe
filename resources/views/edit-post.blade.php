@@ -17,10 +17,16 @@
                     <div>
                         <label for="title" class="text-primary">Title</label>
                         <input type="text" name="title" id="title" class="form-input" value="{{$post->title}}"/>
+                        @error('title')
+                            <p class="text-red-500 text-sm">{{$message}}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="content" class="text-primary">Body</label>
                         <textarea name="content" id="content" class="form-input min-h-24" rows="5">{{$post->content}}</textarea>
+                        @error('content')
+                            <p class="text-red-500 text-sm">{{$message}}</p>
+                        @enderror
                     </div>
 
                     <!-- Image Input -->
@@ -46,6 +52,9 @@
                             <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity">
                             </div>
                         </div>
+                        @error('image')
+                            <p class="text-red-500 text-sm">{{$message}}</p>
+                        @enderror
                         <!-- Preview Container -->
                         <div id="preview-container" class="mt-4">
                             <img
