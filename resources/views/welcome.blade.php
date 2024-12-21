@@ -31,7 +31,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             @foreach ($posts as $post)
-            <div class="post-card shadow-md rounded-lg overflow-hidden">
+            <div class="post-card shadow-md rounded-lg overflow-hidden"  data-post-id="{{ $post->id }}">
                 <!-- Display the uploaded image -->
                 <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-full h-40 object-cover">
 
@@ -212,5 +212,14 @@
             card.style.opacity = "0";
             card.style.transform = "scale(0.9)";
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.post-card').forEach(function (div) {
+        div.addEventListener('click', function () {
+            const postId = this.dataset.postId;
+            window.location.href = `/post/${postId}`;
+        });
+    });
+});
     </script>
 </x-layout>
