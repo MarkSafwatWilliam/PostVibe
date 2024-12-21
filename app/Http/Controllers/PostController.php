@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 
 class PostController extends Controller
 {
+  public function show($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('show', compact('post'));
+    }
 
   public function updatePost(Post $post, Request $request)
   {
