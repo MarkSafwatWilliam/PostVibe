@@ -1,5 +1,5 @@
 <x-layout>
-    <main class="bg-gray-100 text-gray-900">
+    <main class="bg-gray-100 text-gray-900 min-h-[calc(100vh-80px)]">
         <div class="container mx-auto p-6 max-w-3xl">
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <h1 class="text-5xl font-bold mb-6 leading-tight text-center">
@@ -16,7 +16,7 @@
                     alt="{{ $post->title }}"
                 />
                 @endif
-                <div class="prose prose-lg max-w-none">
+                <div class="overflow-auto">
                     {!! nl2br(e($post->content)) !!}
                 </div>
             </div>
