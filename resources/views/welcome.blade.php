@@ -1,29 +1,32 @@
 <x-layout>
     <!-- Hero Section -->
     <section class="hero-section relative">
-        <img
-            src=" {{ asset('hero.jpg') }}"
-            alt="Hero Background"
-            class="w-full h-80 object-cover"
-        />
-        <div
-            class="absolute top-0 left-0 w-full h-full flex items-center justify-center"
-        >
-            <div class="text-center">
-                <span class="text-yellow-300 text-sm uppercase">Arab News</span>
-                <h2 class="text-4xl text-white font-bold my-2 header-title">
-                    The Impact of Arab Events on the Horizon
-                </h2>
-                <p class="text-gray-200">Jason Francisco | October 06, 1973</p>
-            </div>
+    <img
+        src="{{ asset('hero.jpg') }}"
+        alt="Hero Background"
+        class="w-full h-80 object-cover"
+    />
+    <div
+        class="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+    >
+        <div class="text-center">
+            <span class="text-yellow-300 text-sm uppercase">Arab News</span>
+            <h2 class="text-4xl text-white font-bold my-2 header-title">
+                The Impact of Arab Events on the Horizon
+            </h2>
+            <p class="text-gray-200">Jason Francisco | October 06, 1973</p>
         </div>
-    </section>
-<div class="text-center">
-<a href="/create-new" class="px-6 py-3 bg-green-700 text-white text-lg font-semibold rounded-md hover:bg-green-800 transition duration-300">
-            Share your opinion NOW!
-        </a>
+    </div>
+</section>
+
+<div class="mx-auto text-center">
+    <a href="/create-new" 
+       class="mt-8 bg-white text-green-700 font-semibold px-6 py-3 rounded-md shadow-md border border-green-700 
+              hover:bg-green-700 hover:text-white hover:shadow-lg transition duration-300">
+        Share your opinion NOW!
+    </a>
 </div>
-   
+
 
     <!-- Latest Posts Section -->
     <section class="container mx-auto py-8 px-4">
