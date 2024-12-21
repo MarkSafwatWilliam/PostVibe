@@ -41,10 +41,13 @@ Route::middleware(['auth'])->group(function () {
         return view('contact');
     });
 
+
+
     // Logout route
     Route::post('/signout', [LogoutController::class, 'logout']);
 
-
+    // Post page
+    Route::get('/post/{id}', [PostController::class, 'show'])->name('show');
 
     // post related routes
     Route::post('/create-post', [PostController::class, 'createPost']);
