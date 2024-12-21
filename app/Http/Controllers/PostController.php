@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-
 class PostController extends Controller
 {
   public function show($id)
-    {
-        $post = Post::findOrFail($id);
-        return view('show', compact('post'));
-    }
+  {
+    $post = Post::findOrFail($id);
+    return view('show', compact('post'));
+  }
 
   public function updatePost(Post $post, Request $request)
   {
@@ -25,7 +24,7 @@ class PostController extends Controller
     $incomingFields = $request->validate([
       'title' => 'required',
       'content' => 'required',
-      'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Changed from 'required' to 'nullable'
+      'image' => 'nullable|image|max:2048', // Removed 'mimes' rule
     ]);
 
     $incomingFields['title'] = strip_tags($incomingFields['title']);
@@ -44,6 +43,7 @@ class PostController extends Controller
 
     return redirect('/posts');
   }
+
   public function ShowEditPost(Post $post)
   {
     if (auth()->user()->id !== $post['user_id']) {
@@ -57,7 +57,7 @@ class PostController extends Controller
     $incomingFields = $request->validate([
       'title' => 'required',
       'content' => 'required',
-      'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+      'image' => 'required|image|max:2048', // Removed 'mimes' rule
     ]);
 
     // Sanitize 'title' and 'content'
