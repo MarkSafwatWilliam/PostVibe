@@ -16,16 +16,16 @@ export default {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                primary: "#4B6BFB",
+                primary: "#0A6526",
+                // primary: "#4B6BFB",
                 nav: "#3B3C4A",
             },
-            padding:{
-              "sm" : "3.5rem",
-              "md" : "4.5rem",
-              "lg" : "5.5rem",
-              "xl" : "6.5rem",
-
-            }
+            padding: {
+                sm: "3.5rem",
+                md: "4.5rem",
+                lg: "5.5rem",
+                xl: "6.5rem",
+            },
         },
     },
     plugins: [],

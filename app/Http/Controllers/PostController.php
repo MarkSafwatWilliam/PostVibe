@@ -46,7 +46,7 @@ class PostController extends Controller
 
   public function ShowEditPost(Post $post)
   {
-    if (auth()->user()->id !== $post['user_id']) {
+    if (auth()->user()->id !== $post['user_id'] && auth()->user()->is_admin != 1) {
       return redirect('/posts');
     }
     return view('edit-post', ['post' => $post]);
@@ -80,7 +80,7 @@ class PostController extends Controller
     if (!$post) {
       return redirect('/posts')->with('error', 'Post not found');
     }
-    if (auth()->user()->id !== $post['user_id']) {
+    if (auth()->user()->id !== $post['user_id'] && auth()->user()->is_admin != 1) {
       return redirect('/posts')->with('error', 'Unauthorized action');
     }
     if ($post->image) {

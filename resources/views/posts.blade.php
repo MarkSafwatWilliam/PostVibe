@@ -14,7 +14,7 @@
             </div>
         
         @else
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 {{-- Display published posts --}}
                 {{-- Symbolic Link: Laravel stores the public files in the storage directory but this is not directly accessible by the browser.
@@ -24,7 +24,7 @@
                 @foreach ($posts as $post)
                 <div class="post-card shadow-md rounded-lg overflow-hidden" style="position: relative">
                     <!-- Display the uploaded image -->
-                    <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-full h-40 object-cover">
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-full h-40 object-contain">
 
                     <div class="p-4">
                         <h4 class="text-xl font-semibold mb-2 text-center">{{ $post->title }}</h4>
@@ -33,8 +33,8 @@
                         </p>
 
                         {{-- the content part --}}
-                        <p class="text-sm text-gray-600 text-center">
-                            {{ \Illuminate\Support\Str::limit($post->content, 100) }}
+                        <p class="text-sm text-gray-600 text-center h-6 overflow-hidden">
+                            {{ \Illuminate\Support\Str::limit($post->content, 20) }}
                         </p>
                     </div>
 

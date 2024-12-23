@@ -19,7 +19,7 @@
     </div>
 </section>
 
-<div class="mx-auto text-center">
+<div class="mx-auto text-center my-8">
     <a href="/create-new" 
        class="mt-8 bg-white text-green-700 font-semibold px-6 py-3 rounded-md shadow-md border border-green-700 
               hover:bg-green-700 hover:text-white hover:shadow-lg transition duration-300">
@@ -36,7 +36,7 @@
             @foreach ($posts as $post)
             <div class="post-card shadow-md rounded-lg overflow-hidden"  data-post-id="{{ $post->id }}">
                 <!-- Display the uploaded image -->
-                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-full h-40 object-cover">
+                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="h-40 object-contain mx-auto rounded-xl">
 
                 <div class="p-4">
                     <h4 class="text-xl font-semibold mb-2">{{ $post->title }}</h4>
